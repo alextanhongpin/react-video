@@ -31,7 +31,7 @@ async function compressVideo(file, target = "target.mp4") {
     "-vf",
     `scale='min(640,iw)':'min(-1,ih)',crop='iw-mod(iw,2)':'ih-mod(ih,2)'`,
     "-c:v",
-    "libx264",
+    "libx264", // Removing this speeds up operation a lot.
     // For more information about -tune and -preset, read here
     // https://trac.ffmpeg.org/wiki/Encode/H.264
     "-tune",
